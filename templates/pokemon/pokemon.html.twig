@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Pokemon</h1>
+<a href="{{ path('pokemon_index') }}">To pokedex</a>
+<div style="display: flex;">
+    <p style="margin-right: 20px;">{{ pokemon.pokedexNumber }}</p>
+    <p style="margin-right: 20px;">{{ pokemon.name }}</p>
+    <p>{{ pokemon.description }}</p>
+    <a href="{{ path('pokemon_edit', {'id': pokemon.id }) }}">Edit pokemon</a>
+    <a href="{{ path('pokemon_delete', {'id': pokemon.id }) }}">Delete pokemon</a>
+</div>
+{% endblock %}

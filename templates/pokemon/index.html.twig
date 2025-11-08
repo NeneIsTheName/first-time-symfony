@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonController!{% endblock %}
+
+{% block body %}
+    <h1>Pokemons</h1>
+
+    <a href="{{ path('pokemon_new') }}">New pokemon</a>
+    <br>
+    {% for pokemon in pokemons %}
+    <div style="display: flex;">
+        <p style="margin-right: 20px;">{{ pokemon.pokedexNumber }}</p>
+        <a href="{{ path('pokemon_show', {'id': pokemon.id}) }}" style="margin-right: 20px;">{{ pokemon.name }}</a>
+        <p>{{ pokemon.description }}</p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
